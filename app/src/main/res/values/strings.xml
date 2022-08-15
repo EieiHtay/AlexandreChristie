@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">AlexandreChristie</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="welcome">Welcome</string>
+    <string name="content_description">Alexandre Christie</string>
+    <string name="title_home">Home</string>
+    <string name="title_category">Category</string>
+    <string name="title_profile">Profile</string>
+    <string name="food_form">Welcome Watch Form</string>
+
+    <string-array name="collection">
+        <item>Men Collection</item>
+        <item>Women Collection</item>
+        <item>Pair</item>
+    </string-array>
+</resources>

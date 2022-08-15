@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.insertData.WatchActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/img_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:layout_marginHorizontal="16dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_arrow_back"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Watch Form"
+            android:textColor="@color/primary"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:clipToPadding="true"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/main_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome Watch Added Form"
+                android:textColor="@color/primary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp"
+                />
+            <ImageView
+                android:id="@+id/img_profile"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_account"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/main_title"
+                />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_code"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@id/img_profile">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/code_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Code No"
+                    android:inputType="text"
+                    android:nextFocusDown="@id/watch_price" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_price"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/til_code">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/watch_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Price"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:nextFocusDown="@id/watch_desc" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_desc"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="32dp"
+                android:minHeight="100dp"
+                app:layout_constraintTop_toBottomOf="@id/til_price">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/watch_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Description"
+                    android:inputType="textMultiLine"
+                    android:minHeight="100dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/til_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Watch Category"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_desc" />
+            <Spinner
+                android:id="@+id/spinner_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/collection"
+                android:layout_marginTop="16dp"
+                android:paddingVertical="16dp"
+                android:paddingStart="8dp"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/border"
+                app:layout_constraintTop_toBottomOf="@id/til_category"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/food_add"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Add Watch"
+                android:textAllCaps="false"
+                app:cornerRadius="50dp"
+                app:layout_constraintTop_toBottomOf="@id/spinner_category" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
